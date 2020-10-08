@@ -18,7 +18,7 @@ class BadgeNew extends React.Component {
                     <div className="row">
                         <div className="col"> 
                             <Badge 
-                                firstName="Leonardo" 
+                                firstName="Fabio" 
                                 lastName="Fuentes" 
                                 twitter="Fabioleon.fuentes" 
                                 jobTitle="Frontend Developer" 

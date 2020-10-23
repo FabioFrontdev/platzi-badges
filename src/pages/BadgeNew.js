@@ -8,14 +8,29 @@ import Navbar from '../components/Navbar';
 
 
 class BadgeNew extends React.Component {
-    state = { form: {} };
+    state = 
+        { form: {
+            firstName: '',
+            lasttName: '',
+            email: '',
+            jobTitle: '',
+            twitter: '',
+        } 
+    };
 
     handleChange = e => {
-        const nextForm = this.state.form
-        nextForm[e.target.name] = e.target.value;
 
+        //SOLUCION 1 PARA EL PROBLEMA DE SOBREESCRIBIR DATOS DEL FORMULARIO
+        /* const nextForm = this.state.form
+        nextForm[e.target.name] = e.target.value; */
+
+
+        //SOLUCION 2 PARA EL PROBLEMA DE SOBREESCRIBIR DATOS DEL FORMULARIO
         this.setState({
-            form: nextForm,
+            form: {
+                ...this.state.form,
+                [e.target.name]: e.target.value
+            },
         });
     };
 
@@ -31,16 +46,17 @@ class BadgeNew extends React.Component {
                     <div className="row">
                         <div className="col-6"> 
                             <Badge 
-                                firstName="Fabio" 
-                                lastName="Fuentes" 
-                                twitter="Fabioleon.fuentes" 
-                                jobTitle="Frontend Developer" 
+                                firstName={this.state.form.firstName} 
+                                lastName={this.state.form.lasttName} 
+                                twitter={this.state.form.twitter} 
+                                jobTitle={this.state.form.jobTitle}
+                                email={this.state.form.email}
                                 avatarUrl="https://s.gravatar.com/avatar/51bdbb518921ff8dfdc754aeb3bc1414?s=80" 
                             />
                         </div>
 
                         <div className="col-6">
-                            <BadgeForm onChange={this.handleChange}/>
+                            <BadgeForm onChange={this.handleChange} formValues={this.state.form}/>
                         </div>
                     </div>
                 </div>

@@ -1,19 +1,12 @@
 import React from 'react';
 
 class BadgeForm extends React.Component {
-    state = {
-        jobTitle: 'Designer',
-    };
-    handleChange = e => {
-       // console.log({
-       //     name: e.target.value,
-       //     value: e.target.value,
-       // });
-
-       this.setState({
-           [e.target.name]: e.target.value,
-       })
-    };
+    //state = {};
+    // handleChange = e => {
+    //    this.setState({
+    //        [e.target.name]: e.target.value,
+    //    })
+    // };
 
     handleClick = e => {
         console.log('Button was Clicked');
@@ -31,51 +24,51 @@ class BadgeForm extends React.Component {
                 <h1>New Attendant</h1>
 
                 <form onSubmit = {this.handleSubmit}>
-                    <div className="fromgroup">
+                    <div className="form-group">
                         <label>First Name</label>
                         <input 
                          onChange={this.props.onChange}
                          className="form-control" 
                          type="text" 
                          name="firstName"
-                         value={this.state.firstName}
+                         value={this.props.formValues.firstName}
                          />
                     </div>
-                    <div className="fromgroup">
+                    <div className="form-group">
                         <label>Last Name</label>
                         <input 
                         onChange={this.props.onChange} 
                         className="form-control" 
                         type="text" 
                         name="lasttName" 
-                        value={this.state.lastName}
+                        value={this.props.formValues.lastName}
                         />
                     </div>
-                    <div className="fromgroup">
+                    <div className="form-group">
                         <label>Email</label>
                         <input onChange={this.props.onChange} 
                         className="form-control" 
                         type="email" 
                         name="email" 
-                        value={this.state.email}
+                        value={this.props.formValues.email}
                         />
                     </div>
-                    <div className="fromgroup">
+                    <div className="form-group">
                         <label>Job title</label>
                         <input onChange={this.props.onChange} 
                         className="form-control" 
                         type="text" 
                         name="jobTitle"
-                        value={this.state.jobTitle} 
+                        value={this.props.formValues.jobTitle} 
                         />
                     </div>
-                    <div className="fromgroup">
+                    <div className="form-group">
                         <label>Twitter</label>
                         <input onChange={this.props.onChange} 
                         className="form-control" 
                         type="text" 
                         name="twitter" 
-                        value={this.state.twitter}
+                        value={this.props.formValues.twitter}
                         />
                     </div>
                     <button onClick={this.handleClick} className="btn btn-primary">

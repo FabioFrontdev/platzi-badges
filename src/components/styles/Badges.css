@@ -19,6 +19,10 @@
   padding: 0 1rem;
 }
 
+.Badges__error404 {
+  width: 650px;
+}
+
 .Badges_conf-logo {
   margin-bottom: 2rem;
 }

@@ -19,7 +19,7 @@ class Home extends React.Component {
                                 alt="Platzi Conf logo"
                             />
                             <h1>Badge management System</h1>
-                            <Link className="btn btn-primary" to="Badges">
+                            <Link className="btn btn-primary" to="/Badges">
                                 Start
                             </Link>
                         </div>

@@ -19,7 +19,7 @@ class BadgesList extends React.Component{
             <ul className="list-unstyled">
                 {this.props.badges.map((badge) => {
                     return (
-                        <Link className="text-reset text-decoration-none" to={`/badges/${badge.id}/edit`}>
+                        <Link className="text-reset text-decoration-none" to={`/badges/${badge.id}`}>
                             <div className="Badges__content-list"> 
                                 <Gravatar 
                                     className="Badges__avatar" 
